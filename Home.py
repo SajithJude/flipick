@@ -70,7 +70,7 @@ if uploaded_file is not None:
     butn = col2.button("Generate XML")
 
     if butn:
-        with col2.expander("XML data"):
+        with st.expander("XML data"):
             st.write(st.session_state.xml_structure)
 
     
