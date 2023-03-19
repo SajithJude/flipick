@@ -39,15 +39,6 @@ xml_str = """
 
 
 
-
-
-
-
-
-
-
-
-
 inputPrompt = " Convert the following pdf contents :" + output_string + "  Into the following XML structure : " + xml_str + "  Only content with the following numbers should be tagged as follows :1.1 and same levels to Topic, 1.1.1 and same levels to Sub-Topic, 1.1-1 and same levels to Sub-Topic, Include the Level Numbers in the XML exactly as in the original content , Sub_topic_Contents should  not be empty or concise" 
 st.write(len(inputPrompt))
 
