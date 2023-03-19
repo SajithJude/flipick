@@ -2,6 +2,12 @@ import streamlit as st
 import openai
 import os
 
+st.set_page_config(
+    page_title="Generate XML Content",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
 
 openai.api_key = os.getenv("API_KEY")
 
