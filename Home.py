@@ -55,7 +55,7 @@ with col1.expander("Structure Configurations"):
 if uploaded_file is not None:
     pdf_doc = fitz.open(stream=uploaded_file.getvalue(), filetype="pdf")
     
-    with col2.expander("Pdf data")
+    with col2.expander("Pdf data"):
         # Add a multi-select field to get the page numbers from the user
         page_numbers = st.multiselect("Select page numbers", options=range(1, len(pdf_doc) + 1), default=[1])
         
