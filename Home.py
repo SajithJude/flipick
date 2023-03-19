@@ -36,7 +36,7 @@ Include the Level Numbers in the XML exactly as in the original content
 Sub_topic_Contents should  not be empty or concise
 """
 
- col1, col2 = st.columns(2)
+col1, col2 = st.columns(2)
 
 
 # Create expandable container
