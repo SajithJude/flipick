@@ -18,4 +18,4 @@ if uploaded_file is not None:
     for page in pdf_doc:
         text += page.get_text()
     # Display extracted text
-    st.write(text)
+    st.code(text)
