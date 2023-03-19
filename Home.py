@@ -9,32 +9,33 @@ st.title("Flipick XML generator GPT-4")
 
 # Define default values
 default_xml_structure = """
-                        <Course>
-                                    <Topics>
-                                        <Topic>
-                                            <Topic_name></Topic_name>			
-                                            <Contents>
-                                            </Contents>
-                                            <sub_Topics>
-                                                <sub_Topic>
-                                                    <sub_Topic_name></sub_Topic_name>
-                                                    <sub_Topic_Contents>
-                                                    </sub_Topic_Contents>
-                                                </sub_Topic>
-                                            </sub_Topics>
-                                        </Topic>
-                                    </Topics>
-                        </Course>
+<Course>
+            <Topics>
+                <Topic>
+                    <Topic_name></Topic_name>			
+                    <Contents>
+                    </Contents>
+                    <sub_Topics>
+                        <sub_Topic>
+                            <sub_Topic_name></sub_Topic_name>
+                            <sub_Topic_Contents>
+                            </sub_Topic_Contents>
+                        </sub_Topic>
+                    </sub_Topics>
+                </Topic>
+            </Topics>
+</Course>
                         """
-default_xml_conversion_instructions =   """
-                                            Only content with the following numbers should be tagged as follows
-                                            1.1 and same levels to Topic
-                                            1.1.1 and same levels to Sub-Topic
-                                            1.1-1 and same levels to Sub-Topic
-                                            For example, 1.5-2 would be a sub-topic 
-                                            Include the Level Numbers in the XML exactly as in the original content
-                                            Sub_topic_Contents should  not be empty or concise
-                                        """
+default_xml_conversion_instructions =   
+"""
+Only content with the following numbers should be tagged as follows
+1.1 and same levels to Topic
+1.1.1 and same levels to Sub-Topic
+1.1-1 and same levels to Sub-Topic
+For example, 1.5-2 would be a sub-topic 
+Include the Level Numbers in the XML exactly as in the original content
+Sub_topic_Contents should  not be empty or concise
+"""
 # Create expandable container
 with st.expander("Profile Configurations"):
     # Add input fields with default values
