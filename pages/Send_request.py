@@ -8,12 +8,14 @@ openai.api_key = os.getenv("API_KEY")
 Input_content = st.session_state.content 
 st.write(len(Input_content))
 
-def trim_string(input_string):
-    tokens = input_string.split()[:1000]
-    return ' '.join(tokens)
+# def trim_string(input_string):
+#     tokens = input_string.split()[:1000]
+#     return ' '.join(tokens)
 
 # example usage
-output_string = trim_string(Input_content)
+# output_string = trim_string(Input_content)
+output_string = Input_content
+
 # print(output_string)
 
 xml_str = """
