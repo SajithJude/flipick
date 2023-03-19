@@ -8,8 +8,7 @@ st.title("Flipick XML generator GPT-4")
 
 
 # Define default values
-default_xml_structure = """
-<Course>
+default_xml_structure = """<Course>
             <Topics>
                 <Topic>
                     <Topic_name></Topic_name>			
@@ -24,10 +23,8 @@ default_xml_structure = """
                     </sub_Topics>
                 </Topic>
             </Topics>
-</Course>
-                        """
-default_xml_conversion_instructions =  """
-Only content with the following numbers should be tagged as follows
+</Course>"""
+default_xml_conversion_instructions =  """Only content with the following numbers should be tagged as follows
 1.1 and same levels to Topic
 1.1.1 and same levels to Sub-Topic
 1.1-1 and same levels to Sub-Topic
@@ -41,7 +38,7 @@ col1, col2 = st.columns(2)
 
 
 # Create expandable container
-with col1.expander("Profile Configurations"):
+with col1.expander("Structure Configurations"):
     # Add input fields with default values
     xml_structure = st.text_area("XML Structure", default_xml_structure)
     xml_conversion_instructions = st.text_area("XML Conversion Instructions", default_xml_conversion_instructions)
