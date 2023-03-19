@@ -50,7 +50,7 @@ if uploaded_file is not None:
     for page in pdf_doc:
         content += page.get_text()
     # Display extracted text
-    st.code(content)
+    st.text(content)
 
     response = openai.Edit.create(
         model="text-davinci-edit-001",
