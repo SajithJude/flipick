@@ -51,31 +51,32 @@ if uploaded_file is not None:
         content += page.get_text("text")
     # Display extracted text
     st.text(content)
+    st.session_state.content = content
 
-    response = openai.Edit.create(
-        model="text-davinci-edit-001",
-        input=str(content),
-        instruction = "Remove the artifacts from the input and write the content as per original without the artifacts"
-    )
-    step_1_out = response.choices[0].text
+    # response = openai.Edit.create(
+    #     model="text-davinci-edit-001",
+    #     input=str(content),
+    #     instruction = "Remove the artifacts from the input and write the content as per original without the artifacts"
+    # )
+    # step_1_out = response.choices[0].text
 
-    if step_1_out is not None:
-        with st.expander("Step 1 Output"):
-            st.code(step_1_out)
+    # if step_1_out is not None:
+    #     with st.expander("Step 1 Output"):
+    #         st.code(step_1_out)
 
-        step2 = openai.Edit.create(
-            model="text-davinci-edit-001",
-            input=str(step_1_out),
-            instruction = "write the Input as it is with Level Numbers in " + str(xml_structure) + " specified. Please follow these " + str(xml_conversion_instructions) + " ."
-        )
-    step_2_out = step2.choices[0].text
+    #     step2 = openai.Edit.create(
+    #         model="text-davinci-edit-001",
+    #         input=str(step_1_out),
+    #         instruction = "write the Input as it is with Level Numbers in " + str(xml_structure) + " specified. Please follow these " + str(xml_conversion_instructions) + " ."
+    #     )
+    # step_2_out = step2.choices[0].text
 
-    if step_2_out is not None:
+    # if step_2_out is not None:
 
-        with st.expander("Step 2 Output"):
-            st.code(step_2_out)   
+    #     with st.expander("Step 2 Output"):
+    #         st.code(step_2_out)   
 
-    # st.code(step_2_out)
+    # # st.code(step_2_out)
 
 
 
