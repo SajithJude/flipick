@@ -26,7 +26,8 @@ default_xml_structure = """
                                     </Topics>
                         </Course>
                         """
-default_xml_conversion_instructions =   """Only content with the following numbers should be tagged as follows
+default_xml_conversion_instructions =   """
+                                            Only content with the following numbers should be tagged as follows
                                             1.1 and same levels to Topic
                                             1.1.1 and same levels to Sub-Topic
                                             1.1-1 and same levels to Sub-Topic
