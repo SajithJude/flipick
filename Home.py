@@ -55,12 +55,7 @@ if uploaded_file is not None:
     response = openai.Edit.create(
         model="text-davinci-003",
         input=content,
-        instruction = "Remove the artifacts from the input and write the content as per original without the artifacts",
-        temperature=0.56,
-        max_tokens=2066,
-        top_p=1,
-        frequency_penalty=0.35,
-        presence_penalty=0
+        instruction = "Remove the artifacts from the input and write the content as per original without the artifacts"
     )
     step_1_out = response.choices[0].text
     st.code(step_1_out)
