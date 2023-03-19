@@ -25,22 +25,19 @@ default_xml_structure = """"
                                         </Topic>
                                     </Topics>
                         </Course>
-
                         """
-default_xml_conversion_instructions =   """
-                                        Only content with the following numbers should be tagged as follows
-                                        1.1 and same levels to Topic
-                                        1.1.1 and same levels to Sub-Topic
-                                        1.1-1 and same levels to Sub-Topic
-                                        For example, 1.5-2 would be a sub-topic 
-                                        Include the Level Numbers in the XML exactly as in the original content
-                                        Sub_topic_Contents should  not be empty or concise
-
+default_xml_conversion_instructions =   """Only content with the following numbers should be tagged as follows
+                                            1.1 and same levels to Topic
+                                            1.1.1 and same levels to Sub-Topic
+                                            1.1-1 and same levels to Sub-Topic
+                                            For example, 1.5-2 would be a sub-topic 
+                                            Include the Level Numbers in the XML exactly as in the original content
+                                            Sub_topic_Contents should  not be empty or concise
                                         """
 # Create expandable container
 with st.expander("Profile Configurations"):
     # Add input fields with default values
-    xml_structure = st.code("XML Structure", default_xml_structure)
+    xml_structure = st.text_area("XML Structure", default_xml_structure)
     xml_conversion_instructions = st.text_area("XML Conversion Instructions", default_xml_conversion_instructions)
 
     # Save button to save input values to session state
