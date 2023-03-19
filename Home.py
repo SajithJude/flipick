@@ -16,10 +16,10 @@ default_scene_instructions = "Provide exactly 3 bullet points when Scene Templat
 # Create expandable container
 with st.expander("Profile Configurations"):
     # Add input fields with default values
-    xml_structure = st.text_input("XML Structure", default_xml_structure)
-    xml_conversion_instructions = st.text_input("XML Conversion Instructions", default_xml_conversion_instructions)
-    scene_structure = st.text_input("Scene Structure", default_scene_structure)
-    scene_instructions = st.text_input("Scene Instructions", default_scene_instructions)
+    xml_structure = st.code("XML Structure", default_xml_structure)
+    xml_conversion_instructions = st.text_area("XML Conversion Instructions", default_xml_conversion_instructions)
+    scene_structure = st.text_area("Scene Structure", default_scene_structure)
+    scene_instructions = st.text_area("Scene Instructions", default_scene_instructions)
     
     # Save button to save input values to session state
     if st.button("Save"):
