@@ -8,7 +8,7 @@ st.title("Flipick XML generator GPT-4")
 
 
 # Define default values
-default_xml_structure = """"
+default_xml_structure = """
                         <Course>
                                     <Topics>
                                         <Topic>
