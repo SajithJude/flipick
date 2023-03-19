@@ -67,7 +67,7 @@ if uploaded_file is not None:
         
         st.text(content)
         st.session_state.content = content
-    butn = col2.expander.button("Generate XML")
+    butn = expander.button("Generate XML")
 
     if butn:
         with col2.expander("XML data"):
