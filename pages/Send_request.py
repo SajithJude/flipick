@@ -37,7 +37,7 @@ xml_str = """
 
 
 
-inputPrompt = " Remove the artifacts from the " + Content + " and write the content as per original without the artifacts "
+inputPrompt = " Remove the artifacts from the " + Input_content + " and write the content as per original without the artifacts "
 st.write(inputPrompt)
 
 response = openai.Completion.create(
