@@ -40,8 +40,8 @@ col1, col2 = st.columns(2)
 # Create expandable container
 with col1.expander("Structure Configurations"):
     # Add input fields with default values
-    xml_structure = st.text_area("XML Structure", default_xml_structure, height=390, )
-    xml_conversion_instructions = st.text_area("XML Conversion Instructions", default_xml_conversion_instructions,height=320)
+    xml_structure = st.text_area("XML Structure", default_xml_structure, height=400, )
+    xml_conversion_instructions = st.text_area("XML Conversion Instructions", default_xml_conversion_instructions,height=280)
 
     # Save button to save input values to session state
     if st.button("Save"):
