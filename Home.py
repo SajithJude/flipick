@@ -60,5 +60,13 @@ if uploaded_file is not None:
     step_1_out = response.choices[0].text
     st.code(step_1_out)
 
+    step2 = openai.Edit.create(
+        model="text-davinci-edit-001",
+        input=str(step_1_out),
+        instruction = "write the content as it is with Level Numbers in " + str(xml_structure)" specified. Please follow these " + str(xml_conversion_instructions) + " ."
+    )
+    step_2_out = step2.choices[0].text
+    st.code(step_2_out)
+
 
 
