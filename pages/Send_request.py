@@ -6,9 +6,10 @@ import os
 openai.api_key = os.getenv("API_KEY")
 
 Input_content = st.session_state.content 
+st.write(len(Input_content))
 
 def trim_string(input_string):
-    tokens = input_string.split()[:4000]
+    tokens = input_string.split()[:1000]
     return ' '.join(tokens)
 
 # example usage
@@ -46,13 +47,13 @@ xml_str = """
 
 
 inputPrompt = " Remove the artifacts from the following pdf content, and write the content as per original without the artifacts :" + output_string 
-st.write(inputPrompt)
+st.write(len(inputPrompt))
 
 response = openai.Completion.create(
         model="text-davinci-003",
         prompt=inputPrompt,
         temperature=0.56,
-        max_tokens=4000,
+        max_tokens=1000,
         top_p=1,
         frequency_penalty=0.35,
         presence_penalty=0
