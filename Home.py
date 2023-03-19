@@ -48,7 +48,7 @@ if uploaded_file is not None:
     # Extract text from PDF pages
     content = ""
     for page in pdf_doc:
-        content += page.get_text()
+        content += page.get_text("text")
     # Display extracted text
     st.text(content)
 
