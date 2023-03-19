@@ -60,4 +60,4 @@ response = openai.Completion.create(
     )
 step1Out = response.choices[0].text
 
-st.write(step1Out)
+st.code(step1Out)
