@@ -70,7 +70,8 @@ if uploaded_file is not None:
         )
     step_2_out = step2.choices[0].text
 
-     if step_2_out is not None:
+    if step_2_out is not None:
+
         with st.expander("Step 2 Output"):
             st.code(step_2_out)   
 
