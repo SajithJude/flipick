@@ -46,14 +46,14 @@ xml_str = """
 
 
 
-inputPrompt = " Remove the artifacts from the following pdf content, and write the content as per original without the artifacts :" + output_string 
+inputPrompt = " Convert the following pdf contents :" + output_string + "  Into the following XML structure : " + xml_str + "  Only content with the following numbers should be tagged as follows :1.1 and same levels to Topic, 1.1.1 and same levels to Sub-Topic, 1.1-1 and same levels to Sub-Topic, Include the Level Numbers in the XML exactly as in the original content , Sub_topic_Contents should  not be empty or concise" 
 st.write(len(inputPrompt))
 
 response = openai.Completion.create(
         model="text-davinci-003",
         prompt=inputPrompt,
         temperature=0.56,
-        max_tokens=2500,
+        max_tokens=1500,
         top_p=1,
         frequency_penalty=0.35,
         presence_penalty=0
