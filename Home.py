@@ -4,7 +4,7 @@ import os
 import fitz
 
 openai.api_key = os.getenv("API_KEY")
-st.title("Flipick XML generator GPT-4")
+# st.title("Flipick XML generator GPT-4")
 
 
 # Define default values
@@ -63,7 +63,7 @@ if uploaded_file is not None:
     content = ""
     for page_number in page_numbers:
         page = pdf_doc[page_number - 1] # page numbers are 0-indexed in PyMuPDF
-        content += page.get_text("text")
+        content += page.get_text()
     
     col2.text(content)
     st.session_state.content = content
