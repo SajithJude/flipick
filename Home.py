@@ -35,6 +35,7 @@ For example, 1.5-2 would be a sub-topic
 Include the Level Numbers in the XML exactly as in the original content
 Sub_topic_Contents should  not be empty or concise
 """
+uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 
 col1, col2 = st.columns(2)
 
@@ -53,7 +54,6 @@ with col1.expander("Profile Configurations"):
 
 # Upload PDF file
 
-uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 
 if uploaded_file is not None:
     pdf_doc = fitz.open(stream=uploaded_file.getvalue(), filetype="pdf")
