@@ -14,6 +14,9 @@ st.set_page_config(
 # Define default values
 default_xml_structure = """<Course>
             <Topics>
+                <Objectives>
+                    <Objective_name></Objective_name>
+                </Objectives>
                 <Topic>
                     <Topic_name></Topic_name>			
                     <Contents>
@@ -32,6 +35,7 @@ default_xml_conversion_instructions =  """Only content with the following number
 1.1 and same levels to Topic
 1.1.1 and same levels to Sub-Topic
 1.1-1 and same levels to Sub-Topic
+If Objectives are present add Objective_names as bullet points, if not Dont include Objectives in the output
 For example, 1.5-2 would be a sub-topic 
 Include the Level Numbers in the XML exactly as in the original content
 Sub_topic_Contents should  not be empty or concise
