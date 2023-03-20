@@ -2,6 +2,9 @@ import streamlit as st
 import openai
 import os
 import fitz
+import base64
+import json
+
 
 openai.api_key = os.getenv("API_KEY")
 # st.title("Flipick XML generator GPT-4")
