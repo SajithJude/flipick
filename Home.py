@@ -75,23 +75,22 @@ if uploaded_file is not None:
         
         st.text(content)
         st.session_state.content = content
-        butn = col2.button("Generate XML")
 
-    if butn:
-        with st.expander("XML data"):
-            Input_content = st.session_state.content 
-            xml_struct = st.session_state.xml_structure 
-            xml_instructions = st.session_state.xml_conversion_instructions 
-            inputPrompt = " Convert the following pdf contents :" + Input_content + " As it is with the Level Numbers into the following XML Structure : " + xml_struct + " while following these instructions : " + xml_instructions
-            response = openai.Completion.create(
-                                                    model="text-davinci-003",
-                                                    prompt=inputPrompt,
-                                                    temperature=0.56,
-                                                    max_tokens=1000,
-                                                    top_p=1,
-                                                    frequency_penalty=0.35,
-                                                    presence_penalty=0
-                                                )
-            step1Out = response.choices[0].text
-            st.code(step1Out)
-    
+butn = col2.button("Generate XML")
+if butn:
+    with st.expander("XML data"):
+        Input_content = st.session_state.content 
+        xml_struct = st.session_state.xml_structure 
+        xml_instructions = st.session_state.xml_conversion_instructions 
+        inputPrompt = " Convert the following pdf contents :" + Input_content + " As it is with the Level Numbers into the following XML Structure : " + xml_struct + " while following these instructions : " + xml_instructions
+        response = openai.Completion.create(
+                                                model="text-davinci-003",
+                                                prompt=inputPrompt,
+                                                temperature=0.56,
+                                                max_tokens=1000,
+                                                top_p=1,
+                                                frequency_penalty=0.35,
+                                                presence_penalty=0
+                                            )
+        step1Out = response.choices[0].text
+        st.code(step1Out)
