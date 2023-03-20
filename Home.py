@@ -5,7 +5,11 @@ import fitz
 
 openai.api_key = os.getenv("API_KEY")
 # st.title("Flipick XML generator GPT-4")
-
+st.set_page_config(
+    page_title="Generate XML Content",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
 
 # Define default values
 default_xml_structure = """<Course>
