@@ -94,3 +94,14 @@ if butn:
                                             )
         step1Out = response.choices[0].text
         st.code(step1Out)
+        data = {
+        "prompt": Input_content,
+        "completion": step1Out
+        }
+        
+        # Generate download button that saves data as a JSON file
+        json_data = json.dumps(data, indent=4)
+        b64 = base64.b64encode(json_data.encode()).decode()
+        href = f'<a href="data:file/json;base64,{b64}" download="output.json">Download JSON File</a>'
+        st.markdown(href, unsafe_allow_html=True)
+
