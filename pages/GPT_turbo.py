@@ -24,16 +24,8 @@ if uploaded_file is not None:
 
     pdf_doc = fitz.open(stream=uploaded_file.getvalue(), filetype="pdf")
     
-    # with col2.expander("Pdf data"):
-        # Add a multi-select field to get the page numbers from the user
-    page_numbers = st.multiselect("Select page numbers", options=range(1, len(pdf_doc) + 1), default=[1])
-    
-    # Extract text from the selected page numbers
-    content = ""
-    for page_number in page_numbers:
-        page = pdf_doc[page_number - 1] # page numbers are 0-indexed in PyMuPDF
-        Input_content += page.get_text()    
-    # st.text(content)
+    Input_content = pdf_doc.get_text()
+
     st.session_state.Input_content = Input_content
 
 
