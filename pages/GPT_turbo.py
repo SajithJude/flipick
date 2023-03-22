@@ -36,9 +36,6 @@ if st.button("Generate XML content"):
 
     default_xml_structure = """<Course>
             <Topics>
-                <Objectives>
-                    <Objective_name></Objective_name>
-                </Objectives>
                 <Topic>
                     <Topic_name></Topic_name>			
                     <Contents>
