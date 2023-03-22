@@ -3,6 +3,8 @@ import openai
 import os
 import base64
 import json
+import fitz
+
 
 st.set_page_config(
     page_title="Generate XML Content with GPT Turbo",
@@ -19,6 +21,7 @@ openai.api_key = os.getenv("API_KEY")
 
 uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 if uploaded_file is not None:
+
     pdf_doc = fitz.open(stream=uploaded_file.getvalue(), filetype="pdf")
     
     # with col2.expander("Pdf data"):
