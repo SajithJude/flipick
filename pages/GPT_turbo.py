@@ -23,8 +23,10 @@ uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 if uploaded_file is not None:
 
     pdf_doc = fitz.open(stream=uploaded_file.getvalue(), filetype="pdf")
+    for page in pdf_doc:  # iterate the document pages
+        Input_content = page.get_text().encode("utf8")  # get plain text (is in UTF-8)
     
-    Input_content = pdf_doc.get_text()
+    # Input_content = pdf_doc.EXTRACT_text()
 
     st.session_state.Input_content = Input_content
 
