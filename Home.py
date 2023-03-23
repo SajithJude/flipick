@@ -87,7 +87,7 @@ if butn:
         xml_instructions = st.session_state.xml_conversion_instructions 
         inputPrompt = " Convert the following pdf contents :" + Input_content + " As it is with the Level Numbers into the following XML Structure : " + xml_struct + " while following these instructions : " + xml_instructions
         response = openai.Completion.create(
-                                                model="gpt-4",
+                                                model="text-davinci-003",
                                                 prompt=inputPrompt,
                                                 temperature=0.56,
                                                 max_tokens=1000,
