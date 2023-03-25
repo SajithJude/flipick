@@ -50,5 +50,5 @@ for topic in root.findall("./Topics/Topic"):
             sub_topic_name = sub_topic.find("sub_Topic_name").text
             sub_topic_contents = sub_topic.find("sub_Topic_Contents").text
 
-            with st.beta_expander(sub_topic_name):
+            with st.container(sub_topic_name):
                 st.write("Contents:", sub_topic_contents)
