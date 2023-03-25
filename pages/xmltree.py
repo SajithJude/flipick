@@ -2,36 +2,7 @@ import streamlit as st
 import xml.etree.ElementTree as ET
 
 # Define the XML string
-xml_string = """
-<Page>
-    <Topics>
-        <Topic>
-            <Topic_name>Topic 1</Topic_name>
-            <Contents>Contents 1</Contents>
-            <sub_Topics>
-                <sub_Topic>
-                    <sub_Topic_name>Sub-Topic 1.1</sub_Topic_name>
-                    <sub_Topic_Contents>Sub-Contents 1.1</sub_Topic_Contents>
-                </sub_Topic>
-            </sub_Topics>
-        </Topic>
-        <Topic>
-            <Topic_name>Topic 2</Topic_name>
-            <Contents>Contents 2</Contents>
-            <sub_Topics>
-                <sub_Topic>
-                    <sub_Topic_name>Sub-Topic 2.1</sub_Topic_name>
-                    <sub_Topic_Contents>Sub-Contents 2.1</sub_Topic_Contents>
-                </sub_Topic>
-                <sub_Topic>
-                    <sub_Topic_name>Sub-Topic 2.2</sub_Topic_name>
-                    <sub_Topic_Contents>Sub-Contents 2.2</sub_Topic_Contents>
-                </sub_Topic>
-            </sub_Topics>
-        </Topic>
-    </Topics>
-</Page>
-"""
+xml_string = st.text_area("paste text here")
 
 # Parse the XML string using ElementTree
 root = ET.fromstring(xml_string)
