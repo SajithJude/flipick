@@ -19,7 +19,7 @@ for topic in root.findall("./Topics/Topic"):
 
         for sub_topic in topic.findall("./sub_Topics/sub_Topic"):
             sub_topic_name = sub_topic.find("sub_Topic_name").text
-            sub_topic_contents = sub_topic.find("sub_Topic_Contents")
+            sub_topic_contents = sub_topic.find("sub_Topic_Contents").text
 
             with st.container():
                 st.write(sub_topic_name)
