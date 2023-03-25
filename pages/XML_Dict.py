@@ -36,3 +36,5 @@ def app():
         
         # Display the root node and its contents
         display_tree(xml_dict['Page'])
+
+app()
