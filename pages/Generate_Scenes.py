@@ -116,9 +116,9 @@ if uploaded_file is not None:
         st.write("Done processing pages.")
         all_xml_output = "\n".join(output_data)
         filename = f"output.txt"
-            with open(filename, "w") as f:
-                f.write(all_xml_output)
-        
+        with open(filename, "w") as f:
+            f.write(all_xml_output)
+    
         # Generate download links for text files
         st.write("Download XML output:")
         # for xml_output, filename in output_data:
