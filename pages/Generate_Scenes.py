@@ -103,21 +103,25 @@ if uploaded_file is not None:
                 presence_penalty=presence_penalty
             )
             xml_output = response.choices[0].text
-            st.write(xml_output)
+            # st.write(xml_output)
             
-            # Save XML output to text file
-            filename = f"output_batch_{i+1}.txt"
-            with open(filename, "w") as f:
-                f.write(xml_output)
+            # # Save XML output to text file
+            # filename = f"output_batch_{i+1}.txt"
+            # with open(filename, "w") as f:
+            #     f.write(xml_output)
             
             # Store XML output and filename in output_data list
-            output_data.append((xml_output, filename))
+            output_data.append(xml_output)
             
-        # st.write("Done processing pages.")
+        st.write("Done processing pages.")
+        all_xml_output = "\n".join(output_data)
+        filename = f"output.txt"
+            with open(filename, "w") as f:
+                f.write(all_xml_output)
         
         # Generate download links for text files
         st.write("Download XML output:")
-        for xml_output, filename in output_data:
-            b64 = base64.b64encode(xml_output.encode()).decode()
-            href = f'<a href="data:text/plain;base64,{b64}" download="{filename}">{filename}</a>'
-            st.markdown(href, unsafe_allow_html=True)
+        # for xml_output, filename in output_data:
+        b64 = base64.b64encode(all_xml_output.encode()).decode()
+        href = f'<a href="data:text/plain;base64,{b64}" download="{filename}">{filename}</a>'
+        st.markdown(href, unsafe_allow_html=True)
