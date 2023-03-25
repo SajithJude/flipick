@@ -52,7 +52,7 @@ if uploaded_file is not None:
     
     with st.expander("Pdf data"):
         # Add a multi-select field to get the page numbers from the user
-        page_numbers = st.multiselect("Select page numbers", options=range(1, len(pdf_doc) + 1), default=[1])
+        page_numbers = range(1, len(pdf_doc) + 1)
         
         # Extract text from the selected page numbers
         page_content = []
@@ -113,7 +113,7 @@ if uploaded_file is not None:
             # Store XML output and filename in output_data list
             output_data.append((xml_output, filename))
             
-        st.write("Done processing pages.")
+        # st.write("Done processing pages.")
         
         # Generate download links for text files
         st.write("Download XML output:")
