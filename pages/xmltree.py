@@ -22,6 +22,6 @@ for topic in root.findall("./Topics/Topic"):
             for sub_topic_content in sub_topic_name:
                 sub_topic_contents = sub_topic.find("sub_Topic_Contents").text
 
-                with st.container():
-                    st.write(sub_topic_name)
-                    st.write("Contents:", sub_topic_contents)
+            with st.container():
+                st.write(sub_topic_name)
+                st.write("Contents:", sub_topic_contents)
