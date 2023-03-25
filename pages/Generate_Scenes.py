@@ -76,7 +76,7 @@ if uploaded_file is not None:
         presence_penalty = 0
         
         # Split pages into batches of size 5
-        batch_size = 5
+        batch_size = 1
         batches = [page_content[i:i+batch_size] for i in range(0, len(page_content), batch_size)]
         
         # Process batches and save XML output to text files
@@ -89,11 +89,13 @@ if uploaded_file is not None:
             
             # Combine pages in batch into a single input prompt
             input_prompt = "\n".join(batch)
+            inputPrompt = " Convert the following pdf contents :" + input_prompt + " As it is with the Level Numbers into the following XML Structure : " + xml_struct + " while following these instructions : " + xml_instructions
+
             
             # Generate XML output using OpenAI API
             response = openai.Completion.create(
                 model=model,
-                prompt=input_prompt,
+                prompt=inputPrompt,
                 temperature=temperature,
                 max_tokens=max_tokens,
                 top_p=top_p,
@@ -101,6 +103,7 @@ if uploaded_file is not None:
                 presence_penalty=presence_penalty
             )
             xml_output = response.choices[0].text
+            st.write(xml_output)
             
             # Save XML output to text file
             filename = f"output_batch_{i+1}.txt"
