@@ -15,7 +15,8 @@ for topic in root.findall("./Topics/Topic"):
     contents = topic.find("Contents").text
 
     with st.beta_expander(topic_name):
-        st.write("Contents:", contents)
+        st.subheader("Topic Contents:")
+        st.write(contents)
 
         for sub_topic in topic.findall("./sub_Topics/sub_Topic"):
             sub_topic_name = sub_topic.find("sub_Topic_name").text
@@ -24,4 +25,5 @@ for topic in root.findall("./Topics/Topic"):
 
             with st.container():
                 st.write(sub_topic_name)
-                st.write("Contents:", sub_topic_contents)
+                st.markdown("# Contents:")
+                st.write(sub_topic_contents)
