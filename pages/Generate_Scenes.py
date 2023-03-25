@@ -86,7 +86,7 @@ if uploaded_file is not None:
         output_data = []
         for i, batch in enumerate(batches):
             st.write(f"Processing batch {i+1} of {len(batches)}...")
-            st.write(batch)
+            # st.write(batch)
             # Combine pages in batch into a single input prompt
             input_prompt = "\n".join(batch)
             inputPrompt = " Convert the following pdf contents :" + input_prompt + " As it is with the Level Numbers into the following XML Structure : " + xml_structure + " while following these instructions : " + xml_conversion_instructions
