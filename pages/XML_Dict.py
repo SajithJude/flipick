@@ -10,9 +10,12 @@ def app():
     # Display the tree if the user clicks the button
     if st.button("Display Tree"):
         # Parse the XML string using ElementTree
-        topic_names = re.findall("<Topic_name>(.*?)</Topic_name>", xml_string)
-        sub_topic_names = re.findall("<sub_Topic_name>(.*?)</sub_Topic_name>", xml_string)
+        topic_names = re.findall("<Topic_Contents>(.*?)</Topic_Contents>", xml_string)
+        sub_topic_names = re.findall("<sub_Topic_Contents>(.*?)</sub_Topic_Contents>", xml_string)
 
         
         # Display the root node and its contents
-        display_node(root)
+        st.write(topic_names)
+        st.write(sub_topic_names)
+
+app()
