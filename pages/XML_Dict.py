@@ -4,7 +4,7 @@ import re
 
 def display_node(node):
     # Display the node name
-    st.write(f"## {node.attrib['_name']}")
+    st.write(f"## {node.attrib['Root']}")
     
     # Display the topic contents
     topic_contents = node.find('Topic_Contents').text.strip()
