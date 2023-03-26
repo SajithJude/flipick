@@ -53,3 +53,4 @@ def app():
         
         # Display the root node and its contents
         display_node(root)
+app()
