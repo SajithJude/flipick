@@ -1,28 +1,32 @@
 import streamlit as st
-import xmltodict
+import re
 
 def display_tree(node):
     # Display the node name
-    st.write(f"## {node['@name']}")
+    node_name = re.search(r'<Topic\s+name="([^"]+)">', node).group(1)
+    st.write(f"## {node_name}")
     
     # Display the topic contents
-    st.write(node['Topic_Contents'])
+    topic_contents = re.search(r'<Topic_Contents>(.+?)</Topic_Contents>', node, re.DOTALL).group(1)
+    st.write(topic_contents.strip())
     
     # Display the subtopics if any
-    if 'Sub_Topics' in node:
-        for subtopic in node['Sub_Topics']['Sub_Topic']:
+    subtopics = re.findall(r'<Sub_Topic\s+name="([^"]+)">(.+?)</Sub_Topic>', node, re.DOTALL)
+    if subtopics:
+        for subtopic in subtopics:
             # Display the subtopic name and contents
-            st.write(f"### {subtopic['@name']}")
-            st.write(subtopic['Sub_Topic_Contents'])
+            st.write(f"### {subtopic[0]}")
+            st.write(subtopic[1].strip())
             
             # Display the sub-subtopics if any
-            if 'Sub_Topics' in subtopic:
-                for subsubtopic in subtopic['Sub_Topics']['Sub_Topic']:
+            subsubtopics = re.findall(r'<Sub_Topic\s+name="([^"]+)">(.+?)</Sub_Topic>', subtopic[1], re.DOTALL)
+            if subsubtopics:
+                for subsubtopic in subsubtopics:
                     # Display the sub-subtopic name and contents
-                    st.write(f"#### {subsubtopic['@name']}")
-                    st.write(subsubtopic['Sub_Topic_Contents'])
+                    st.write(f"#### {subsubtopic[0]}")
+                    st.write(subsubtopic[1].strip())
                     # Recursive call to display any further sub-subtopics
-                    display_tree(subsubtopic)
+                    display_tree(subsubtopic[1])
 
 # Define the Streamlit app
 def app():
@@ -31,10 +35,10 @@ def app():
     
     # Display the tree if the user clicks the button
     if st.button("Display Tree"):
-        # Convert the XML string to a Python dictionary
-        xml_dict = xmltodict.parse(xml_string)
-        
         # Display the root node and its contents
-        display_tree(xml_dict['Page'])
+        root_node = re.search(r'<Page>(.+)</Page>', xml_string, re.DOTALL).group(1)
+        display_tree(root_node)
+
+
 
 app()
