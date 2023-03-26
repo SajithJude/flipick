@@ -1,3 +1,4 @@
+<Root>
 <Page>
     <Topic>  1.1 Need of a Bank </Topic>
         <Topic_Contents>Indian Banking System for the last two centuries has seen many developments. Till 1955, the commercial banking was in the hands of private corporates. Setting up of State Bank of India and its subsidiaries and, thereafter nationalization of banks changed the structure of banks. With the start of financial reforms in 1991-92, new private banks came into existence and the full use of technology by these banks improved customer service in banks to a great extent. Today, all banks are competing with each other in regard to the development of new products matching with global standards. Banks offer savings, remittance, credit and other ancillary products to their customers. In addition, customers are also offered insurance and other risk management products. There are a large number of commercial bank branches and cooperative societies which are offering banking services to the people of India.</Topic_Contents>
@@ -45,7 +46,10 @@
     <sub_Topic>(b) Foreign Banks</sub_Topic>
     <sub_Topic_Contents>These are the banks incorporated abroad but granted license by RBI to do banking business in India through their Indian branches. While there are many foreign banks operating in India, their branch network is smaller and</sub_Topic_Contents>
 
+</Page>
+
 <Page>
+
     <Topic>1. Structure of Indian Banking and Types of Banks</Topic>			
     <Topic_Contents>The most of them operate in metropolitan cities and state capitals. Their operations are technology driven and a good part of their business comprises of corporate banking, foreign exchange, export/import finance and merchant banking etc.</Topic_Contents>
     <sub_Topic>  1.1 Commercial Banks  </sub_Topic>
@@ -81,7 +85,7 @@
     <sub_Topic>  1.1 Loans and Advances  </sub_Topic>
         <sub_Topic_Contents> 
             Banks lend in the form of Cash Credits, Overdrafts, Demand Loans and term Loans. Based on the borrower profile, loans can be classified as Corporate Loans, SME advances, agricultural Loans, retail Loans, Foreign Currency Loans, educational Loans, Vehicle Loans etc. Loans are also classified on the basis of security. Security could be in the form of surety, pledge of Bank’s Deposit receipts, shares and debentures, assignment of Life Insurance policies, Mortgage of immovable property, hypothecation of plant and machinery, raw material etc. A loan account with security is known as secured loan whereas a loan without security is known as clean loan (clean advance). 
-In order to repay depositors on demand and pay interest on borrowed funds and deposits, banks expect that all the borrowers who take the loans are prompt in payment of interest and repayment of principal amount. However, it is possible that on account a number of reasons, the interest and principal may get defaulted and become overdue. Loans and advances which remain overdue for more than a stipulated period is known as ‘non-performing assets’ (NPAs). NPAs cause loss of income (interest not being paid or recovered) and in some cases loss of the principal (amount lent). Lending, therefore, calls for good credit appraisal and requires adequate care, caution and supervision/monitoring by the bank to prevent loans turning overdue and eventually into NPAs. Collection or recovery of dues/overdues is important for sustaining the viability of banks.</sub_Topic_Contents>
+            In order to repay depositors on demand and pay interest on borrowed funds and deposits, banks expect that all the borrowers who take the loans are prompt in payment of interest and repayment of principal amount. However, it is possible that on account a number of reasons, the interest and principal may get defaulted and become overdue. Loans and advances which remain overdue for more than a stipulated period is known as ‘non-performing assets’ (NPAs). NPAs cause loss of income (interest not being paid or recovered) and in some cases loss of the principal (amount lent). Lending, therefore, calls for good credit appraisal and requires adequate care, caution and supervision/monitoring by the bank to prevent loans turning overdue and eventually into NPAs. Collection or recovery of dues/overdues is important for sustaining the viability of banks.</sub_Topic_Contents>
     <sub_Topic_name>  (c) Remittance Services </sub_Topic_name>
         <sub_Topic_name_Contents> 
             Customers have to make payment for purchases in the place of their business or in the place of business of the vendor/seller. This calls for movement of funds from one place to another either within India or abroad through various channels such as Cheques/Drafts/Pay Orders/Electronic Wire Transfer etc.</sub_Topic_name_Contents>
@@ -111,7 +115,7 @@ In order to repay depositors on demand and pay interest on borrowed funds and de
     <sub_Topic>(a) Greater Operational Freedom given to Banks</sub_Topic>
     <sub_Topic_Contents>RBI has deregulated interest rates and given operational freedom to banks for fixing interest rates on advances as well as deposits as per their assets- Liabilities Management (ALM) policies. RBI expects banks to be more transparent in regard their base rates and other policy matters.</sub_Topic_Contents>
     <sub_Topic_name>(b) Emergence of Universal Banking</sub_Topic_name>
-    <sub_Topic_name_Contents>Universal banking means offering all banking products & services (both fee based and fund based services) under one roof. Banks are making lower profit margins on their lending business with increased competition. Therefore, banks are increasingly focusing on fee-based income to make up for this falling.</sub_Topic_name_Contents>
+    <sub_Topic_name_Contents>Universal banking means offering all banking products  services (both fee based and fund based services) under one roof. Banks are making lower profit margins on their lending business with increased competition. Therefore, banks are increasingly focusing on fee-based income to make up for this falling.</sub_Topic_name_Contents>
 </Page>
 
 <Page>
@@ -125,17 +129,4 @@ In order to repay depositors on demand and pay interest on borrowed funds and de
   <sub_Topic_name_Contents>   Adoption of new technology in banks has considerably changed the banking culture itself. Technological evolution increased automation of banking operations which enabled off-site banking through ATMs, internet banking, payment of utilities through banks, travel reservation through banks, etc. Core Banking Solution (CBS) implemented in almost all banks has enabled anywhere, anytime banking. Use of mobile banking is increasing day-by-day. Remittances of funds through RTGS and NEFT have facilitated the individuals and also the traders. Banks are also entering into the “wallet” banking business for penetrating its outreach to the vast population of the country. Use of plastic money like credit cards, debit cards and other pre-paid instruments at the “point of sale” are becoming popular.  </sub_Topic_name_Contents>
 </Page>
 
-<Page>
-    <Topic>  1. Structure of Indian Banking and Types of Banks </Topic>			
-                <Topic_Contents>
-                    The banking industry in India has witnessed mergers and acquisitions triggered by a combination of Government dictate and synergistic motives. A higher capital base, which could be possible through consolidation, will thus allow higher lending to borrowers. Other perceived benefits from Consolidation are increased efficiency and profitability. It is expected that the Indian Banking sector will witness consolidation through M&A to meet challenges and exploit synergistic benefits. 
-                </Topic_Contents>
-        <sub_Topic>    1.1 Consolidation of Banks    </sub_Topic>
-      <sub_Topic_Contents> 
-The mobile-phone revolution that is transforming the country could also turn into a banking revolution in terms of reach and transaction. The reach of mobile to the remote village and its usage by the common man has become order of the day and it is estimated that around 1/4 of mobile users are residing in villages/small towns. The coverage of mobile phones and the use of such instruments by all section of the population can be exploited for extending financial services to the excluded populations. It enables the subscribers to manage their financial transactions (funds transfer) independent of place and time. The subscriber can approach a retailer of mobile network for withdrawal/deposit of money and the transaction takes place using SMS messages. 
-      </sub_Topic_Contents>
-            <sub_Topic_name>   (f) Mobile Banking </sub_Topic_name>
-           <sub_Topic_name_Contents> 
-The mobile banking services are generally available through a java application on Blackberry, Android, iPhones, and Windows Mobile phones. Various banking services like Funds transfer, Immediate Payment Services, Enquiry Services (Balance Enquiry/Mini Statement), Demat Account Services, requests for Cheque Book, Bill Payments, etc., may be carried out through Mobile Banking. There are transaction limits for Mobile Banking and these services are free of charge. The Mobile Banking services are also available over SMS. The basic financial transactions from the Bank accounts can be executed through a mobile based PIN system using “MobileBanking”. Mobile Banking through Mobile Wallet was also launched in 2012. Mobile telephony and pre-paid wallets would also be utilized for coverage of households under the Financial Inclusion campaign. 
-           </sub_Topic_name_Contents>
-</Page>
+</Root>
