@@ -5,7 +5,7 @@ import re
 def display_node(node):
     # Display the node name
     try:
-        node_name = node.attrib['name']
+        node_name = node.attrib['Topic']
     except KeyError:
         node_name = ""
     st.write(f"## {node_name}")
