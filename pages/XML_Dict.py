@@ -3,11 +3,11 @@ import re
 
 def display_tree(node):
     # Display the node name
-    node_name = re.search(r'<Topic\s+name="([^"]+)">', node).group(1)
+    node_name = re.search(r'<Topic\s+name="([^"]+)">', node).text
     st.write(f"## {node_name}")
     
     # Display the topic contents
-    topic_contents = re.search(r'<Topic_Contents>(.+?)</Topic_Contents>', node, re.DOTALL).group(1)
+    topic_contents = re.search(r'<Topic_Contents>(.+?)</Topic_Contents>', node, re.DOTALL).text
     st.write(topic_contents.strip())
     
     # Display the subtopics if any
@@ -36,7 +36,7 @@ def app():
     # Display the tree if the user clicks the button
     if st.button("Display Tree"):
         # Display the root node and its contents
-        root_node = re.search(r'<Page>(.+)</Page>', xml_string, re.DOTALL).group(1)
+        root_node = re.search(r'<Page>(.+)</Page>', xml_string, re.DOTALL).text
         display_tree(root_node)
 
 
