@@ -13,7 +13,7 @@ if uploaded_file is not None:
         page_dims = page.bound()
         content_area = page.rect
         # content_area.bottom = page_dims[1] + 10  # adjust bottom margin
-        header_area = fitz.Rect(0, 0, page_dims[2], 10)
+        header_area = fitz.Rect(0, 0, page_dims[2], 1)
         content_area = content_area - header_area
         content = page.get_text("text", clip=content_area)
         st.write(content)
