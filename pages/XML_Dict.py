@@ -4,7 +4,11 @@ import re
 
 def display_node(node):
     # Display the node name
-    st.write(f"## {node.attrib['Root']}")
+    try:
+        node_name = node.attrib['name']
+    except KeyError:
+        node_name = ""
+    st.write(f"## {node_name}")
     
     # Display the topic contents
     topic_contents = node.find('Topic_Contents').text.strip()
@@ -15,7 +19,11 @@ def display_node(node):
     if subtopics:
         for subtopic in subtopics:
             # Display the subtopic name and contents
-            st.write(f"### {subtopic.attrib['name']}")
+            try:
+                subtopic_name = subtopic.attrib['name']
+            except KeyError:
+                subtopic_name = ""
+            st.write(f"### {subtopic_name}")
             subtopic_contents = subtopic.find('Sub_Topic_Contents').text.strip()
             st.write(subtopic_contents)
             
@@ -24,7 +32,11 @@ def display_node(node):
             if subsubtopics:
                 for subsubtopic in subsubtopics:
                     # Display the sub-subtopic name and contents
-                    st.write(f"#### {subsubtopic.attrib['name']}")
+                    try:
+                        subsubtopic_name = subsubtopic.attrib['name']
+                    except KeyError:
+                        subsubtopic_name = ""
+                    st.write(f"#### {subsubtopic_name}")
                     subsubtopic_contents = subsubtopic.find('Sub_Topic_Contents').text.strip()
                     st.write(subsubtopic_contents)
                     # Recursive call to display any further sub-subtopics
@@ -41,4 +53,3 @@ def app():
         
         # Display the root node and its contents
         display_node(root)
-app()
