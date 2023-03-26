@@ -9,14 +9,14 @@ openai.api_key = os.getenv("API_KEY")
 
 # Define default values
 default_xml_structure = """<Page>
-                    <Topic>{1.1 xxxxxxxxxxxxxx}</Topic>			
+                    <Topic> "Title" </Topic>			
                                 <Topic_Contents>
                                    "paragraph"
                               </Topic_Contents>
-                        <sub_Topic>  {1.1-1 xxxxxxxxxxx}   </sub_Topic>
+                        <sub_Topic>  "1.1-1 subtopic"   </sub_Topic>
                       <sub_Topic_Contents> "paragraph" </sub_Topic_Contents>
-                            <sub_Topic_name> {(a) xxxxxxxxxxx}</sub_Topic_name>
-                           <sub_Topic_name_Contents> {paragraph} </sub_Topic_name_Contents>
+                            <sub_Topic_name> "(a) xxxxxxxxxxx" </sub_Topic_name>
+                           <sub_Topic_name_Contents> "paragraph}"</sub_Topic_name_Contents>
 
 </Page>>"""
 
