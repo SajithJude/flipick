@@ -1,44 +1,44 @@
 import streamlit as st
+import xml.etree.ElementTree as ET
 import re
 
-def display_tree(node):
+def display_node(node):
     # Display the node name
-    node_name = re.search(r'<Topic\s+name="([^"]+)">', node).text
-    st.write(f"## {node_name}")
+    st.write(f"## {node.attrib['name']}")
     
     # Display the topic contents
-    topic_contents = re.search(r'<Topic_Contents>(.+?)</Topic_Contents>', node, re.DOTALL).text
-    st.write(topic_contents.strip())
+    topic_contents = node.find('Topic_Contents').text.strip()
+    st.write(topic_contents)
     
     # Display the subtopics if any
-    subtopics = re.findall(r'<Sub_Topic\s+name="([^"]+)">(.+?)</Sub_Topic>', node, re.DOTALL)
+    subtopics = node.findall('Sub_Topics/Sub_Topic')
     if subtopics:
         for subtopic in subtopics:
             # Display the subtopic name and contents
-            st.write(f"### {subtopic[0]}")
-            st.write(subtopic[1].strip())
+            st.write(f"### {subtopic.attrib['name']}")
+            subtopic_contents = subtopic.find('Sub_Topic_Contents').text.strip()
+            st.write(subtopic_contents)
             
             # Display the sub-subtopics if any
-            subsubtopics = re.findall(r'<Sub_Topic\s+name="([^"]+)">(.+?)</Sub_Topic>', subtopic[1], re.DOTALL)
+            subsubtopics = subtopic.findall('Sub_Topics/Sub_Topic')
             if subsubtopics:
                 for subsubtopic in subsubtopics:
                     # Display the sub-subtopic name and contents
-                    st.write(f"#### {subsubtopic[0]}")
-                    st.write(subsubtopic[1].strip())
+                    st.write(f"#### {subsubtopic.attrib['name']}")
+                    subsubtopic_contents = subsubtopic.find('Sub_Topic_Contents').text.strip()
+                    st.write(subsubtopic_contents)
                     # Recursive call to display any further sub-subtopics
-                    display_tree(subsubtopic[1])
+                    display_node(subsubtopic)
 
-# Define the Streamlit app
 def app():
     # Create a text area input for the XML string
     xml_string = st.text_area("Enter XML String")
     
     # Display the tree if the user clicks the button
     if st.button("Display Tree"):
+        # Parse the XML string using ElementTree
+        root = ET.fromstring(xml_string)
+        
         # Display the root node and its contents
-        root_node = re.search(r'<Page>(.+)</Page>', xml_string, re.DOTALL).text
-        display_tree(root_node)
-
-
-
+        display_node(root)
 app()
