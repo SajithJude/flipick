@@ -18,7 +18,7 @@ default_xml_structure = """<Page>
                             <sub_Topic_name> "(a) xxxxxxxxxxx" </sub_Topic_name>
                            <sub_Topic_name_Contents> "paragraph}"</sub_Topic_name_Contents>
 
-</Page>>"""
+</Page>"""
 
 default_xml_conversion_instructions =  """
 Include the Level Numbers exactly as in the original content
