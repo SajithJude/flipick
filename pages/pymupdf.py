@@ -12,7 +12,7 @@ if uploaded_file is not None:
     for page in doc:
         page_dims = page.bound()
         content_area = page.rect
-        content_area.bottom = page_dims[1] - 10  # adjust bottom margin
+        content_area.bottom = page_dims[1] + 10  # adjust bottom margin
         content = page.get_text("text", clip=content_area)
         st.write(content)
     doc.close()
