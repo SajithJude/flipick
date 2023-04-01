@@ -43,13 +43,31 @@ For example, 1.5-2 would be a sub-topic
 Include the Level Numbers in the XML exactly as in the original content
 Sub_topic_Contents should  not be empty or concise
 """
+
+
+pdf_files = []
+for file in os.listdir("content"):
+    if file.endswith(".pdf"):
+        pdf_files.append(file)
+
+
+with st.expander("PDF File Selection"):
+    # Add a dropdown menu to select a PDF file
+    selected_file = st.selectbox("Select a PDF file", pdf_files)
+
+    # Load the selected PDF file
+    pdf_doc = fitz.open(os.path.join("content", selected_file))
+
+    # Add a multi-select field to get the page numbers from the user
+    page_numbers = st.multiselect("Select page numbers", options=range(1, len(pdf_doc) + 1), default=[1])
+
 uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 
 col1, col2 = st.columns(2)
 
 
 # Create expandable container
-with col1.expander("Structure Configurations"):
+with st.expander("Structure Configurations"):
     # Add input fields with default values
     xml_structure = st.text_area("XML Structure", default_xml_structure, height=430, )
     xml_conversion_instructions = st.text_area("XML Conversion Instructions", default_xml_conversion_instructions,height=280)
