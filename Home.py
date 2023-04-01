@@ -50,8 +50,9 @@ for file in os.listdir("content"):
     if file.endswith(".pdf"):
         pdf_files.append(file)
 
+col1, col2 = st.columns(2)
 
-with st.expander("PDF File Selection"):
+with col1.expander("PDF File Selection"):
     # Add a dropdown menu to select a PDF file
     selected_file = st.selectbox("Select a PDF file", pdf_files)
 
@@ -63,11 +64,10 @@ with st.expander("PDF File Selection"):
 
 # uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 
-col1, col2 = st.columns(2)
 
 
 # Create expandable container
-with st.expander("Structure Configurations"):
+with col2.expander("Structure Configurations"):
     # Add input fields with default values
     xml_structure = st.text_area("XML Structure", default_xml_structure, height=430, )
     xml_conversion_instructions = st.text_area("XML Conversion Instructions", default_xml_conversion_instructions,height=280)
