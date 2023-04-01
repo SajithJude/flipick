@@ -37,7 +37,7 @@ def main():
             f.write(uploaded_file.getbuffer())
         st.success("File saved successfully")
 
-    files = [f for f in os.listdir(CONTENT_DIR) if f.endswith(".pdf")]
+    files =  os.listdir(CONTENT_DIR)
     
     # Display the list of PDF files
     if len(files) > 0:
