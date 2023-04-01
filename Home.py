@@ -61,7 +61,7 @@ with st.expander("PDF File Selection"):
     # Add a multi-select field to get the page numbers from the user
     page_numbers = st.multiselect("Select page numbers", options=range(1, len(pdf_doc) + 1), default=[1])
 
-uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
+# uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 
 col1, col2 = st.columns(2)
 
