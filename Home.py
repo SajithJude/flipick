@@ -62,12 +62,12 @@ with col1.expander("PDF File Selection"):
     # Add a multi-select field to get the page numbers from the user
     page_numbers = st.multiselect("Select page numbers", options=range(1, len(pdf_doc) + 1), default=[1])
     content = ""
-        for page_number in page_numbers:
-            page = pdf_doc[page_number - 1] # page numbers are 0-indexed in PyMuPDF
-            content += page.get_text()
-        
-        st.text(content)
-        st.session_state.content = content
+    for page_number in page_numbers:
+        page = pdf_doc[page_number - 1] # page numbers are 0-indexed in PyMuPDF
+        content += page.get_text()
+    
+    st.text(content)
+    st.session_state.content = content
 
 # uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 
