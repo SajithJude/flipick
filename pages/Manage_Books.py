@@ -45,7 +45,7 @@ def main():
         for file_name in files:
             col1, col2, col3 = st.columns((4, 1, 1))
             col1.caption(file_name)
-            col2.button("View", key=file_name, on_click=display_pdf, args=(file_name,))
+            # col2.button("View", key=file_name, on_click=display_pdf, args=(file_name,))
             col3.button("Delete", key=file_name, on_click=delete_file, args=(file_name,))
     else:
         st.write("No PDF files found in the content directory.")
